@@ -34,6 +34,10 @@ public class EmployeeUpdateTests {
         System.out.println("Status code is: " + statusCode);
         Assert.assertEquals(statusCode, 200);
 
+        String statusLine = response.getStatusLine();
+        System.out.println("Status line is: " + statusLine);
+        Assert.assertEquals(statusLine, "HTTP/1.1 200 OK");
+
         String message = response.jsonPath().get("message");
         Assert.assertEquals(message, "Successfully! Record has been updated.");
     }

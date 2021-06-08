@@ -25,6 +25,9 @@ public class EmployeeDeleteionTests {
         System.out.println("Status code is: " + statusCode);
         Assert.assertEquals(statusCode, 200);
 
+        String statusLine = response.getStatusLine();
+        Assert.assertEquals(statusLine, "HTTP/1.1 200 OK");
+
         String message = response.jsonPath().get("message");
         Assert.assertEquals(message, "Successfully! Record has been deleted");
 

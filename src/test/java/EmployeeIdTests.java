@@ -28,5 +28,8 @@ public class EmployeeIdTests {
         String statusLine = response.getStatusLine();
         System.out.println("Status line is: " + statusLine);
         Assert.assertEquals(statusLine, "HTTP/1.1 200 OK");
+
+        String message = response.jsonPath().get("message");
+        Assert.assertEquals(message, "Successfully! Record has been fetched.");
     }
 }
