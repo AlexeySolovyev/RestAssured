@@ -55,5 +55,4 @@ public class EmployeeCreationTests {
         String message = response.jsonPath().get("message");
         Assert.assertEquals(message, "Successfully! Record has been added.");
     }
-
 }
